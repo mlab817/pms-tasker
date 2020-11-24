@@ -1,0 +1,14 @@
+type Enduser {
+    id: ID
+    name: String
+    acronym: String
+    slug: String
+    procurement_coordinator: String
+    created_at: String
+    updated_at: String
+}
+
+extend type Query {
+    endusers: [Enduser] @all
+    enduser(id: ID! @eq): Enduser @find
+}

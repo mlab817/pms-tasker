@@ -1,0 +1,32 @@
+type Rfq {
+    id: ID
+    number: String
+    name: String
+    created_at: String
+    updated_at: String
+    procurement_requests: [ProcurementRequest] @belongsToMany
+}
+
+input CreateRfqInput {
+    name: String
+    number: String
+    procurement_requests: CreateProcurementRequestsBelongsToMany
+}
+
+input UpdateRfqInput {
+    id: ID!
+    name: String
+    number: String
+    procurement_requests: UpdateProcurementRequestsBelongsToMany
+}
+
+extend type Query {
+    rfqs: [Rfq] @all
+    rfq(id: ID! @eq): Rfq @find
+}
+
+extend type Mutation {
+    createRfq(input: CreateRfqInput! @spread): Rfq @create
+    updateRfq(input: UpdateRfqInput! @spread): Rfq @update
+    deleteRfq(id: ID!): Rfq @delete
+}

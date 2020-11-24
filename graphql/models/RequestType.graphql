@@ -1,0 +1,12 @@
+type RequestType {
+    id: ID
+    name: String
+    slug: String
+
+    procurement_requests: [ProcurementRequest] @hasMany
+}
+
+extend type Query {
+    request_types: [RequestType] @all
+    request_type(id: ID! @eq): RequestType @find
+}

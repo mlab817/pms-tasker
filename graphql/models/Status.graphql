@@ -1,0 +1,14 @@
+type Status {
+    id: ID
+    name: String
+    slug: String
+    created_at: String
+    updated_at: String
+
+    tasks: [Task] @belongsToMany
+}
+
+extend type Query {
+    statuses: [Status] @all
+    status(id: ID! @eq): Status @find
+}

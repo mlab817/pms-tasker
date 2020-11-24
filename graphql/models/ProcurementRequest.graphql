@@ -1,0 +1,15 @@
+type ProcurementRequest {
+    id: ID
+    number: String
+    details: String
+    abc: Float
+    enduser_id: ID
+    enduser: Enduser @belongsTo
+    created_at: String
+    updated_at: String
+}
+
+extend type Query {
+    procurement_requests: [ProcurementRequest] @all
+    procurement_request(id: ID! @eq): ProcurementRequest @find
+}

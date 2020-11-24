@@ -1,0 +1,8 @@
+type Team {
+    id: ID
+    name: String
+    personal_team: Boolean
+    user_id: ID
+    user: User @belongsTo
+    users: [User] @belongsToMany
+}

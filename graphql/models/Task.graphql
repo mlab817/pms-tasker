@@ -1,0 +1,64 @@
+type Task {
+    id: ID
+    action_id: ID
+    action: Action @belongsTo
+    user_id: ID
+    user: User @belongsTo
+    completed: Boolean
+    enduser_id: ID
+    enduser: Enduser @belongsTo
+    details: String
+    remarks: String
+    status_id: ID
+    status: Status @belongsTo
+    completed_at: String
+    creator: User @belongsTo
+    updater: User @belongsTo
+    deleter: User @belongsTo
+    created_at: String
+    updated_at: String
+    deleted_at: String
+    procurement_requests: [ProcurementRequest] @belongsToMany
+}
+
+input CreateTaskInput {
+    action_id: ID
+    user_id: ID
+    details: String
+    remarks: String
+    procurement_requests: CreateProcurementRequestsBelongsToMany
+}
+
+input UpdateTaskInput {
+    id: ID!
+    action_id: ID
+    user_id: ID
+    details: String
+    remarks: String
+    status_id: ID
+    procurement_requests: UpdateProcurementRequestsBelongsToMany
+}
+
+input CreateProcurementRequestsBelongsToMany {
+    sync: [ID]
+}
+
+input UpdateProcurementRequestsBelongsToMany {
+    sync: [ID]
+}
+
+extend type Query {
+    tasks: [Task] @all
+    ongoingTasks: [Task] @all(scopes: ["ongoing"])
+    completedTasks: [Task] @all(scopes: ["completed"])
+    myTasks: [Task] @all(scopes: ["own"]) @guard(with:["api"])
+    task(id: ID! @eq): Task @find
+}
+
+extend type Mutation {
+    createTask(input: CreateTaskInput! @spread): Task @create @guard(with: ["api"])
+    updateTask(input: UpdateTaskInput! @spread): Task @update @guard(with: ["api"])
+    deleteTask(id: ID!): Task @delete @guard(with: ["api"])
+    completeTask(id: ID!): Task @field(resolver: "CompleteTask")
+    cancelTask(id: ID!): Task @field(resolver: "CancelTask")
+}

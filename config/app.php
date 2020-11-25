@@ -171,12 +171,16 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
+         App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
-
+	    \NotificationChannels\Discord\DiscordServiceProvider::class,
+	    \Nuwave\Lighthouse\Subscriptions\SubscriptionServiceProvider::class,
+	    \TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
+	    \Laravel\Scout\ScoutServiceProvider::class,
+	    \Spatie\Permission\PermissionServiceProvider::class,
     ],
 
     /*

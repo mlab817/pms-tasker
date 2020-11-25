@@ -1,8 +1,49 @@
 type Team {
     id: ID
     name: String
-    personal_team: Boolean
-    user_id: ID
-    user: User @belongsTo
+    owner_id: ID
+    owner: User @belongsTo
     users: [User] @belongsToMany
+}
+
+input CreateTeamInput {
+    name: String!
+}
+
+input UpdateTeamInput {
+    id: ID!
+    name: String!
+}
+
+extend type Mutation {
+    acceptInvite(token: String!): User
+        @field(resolver: "TeamworkMutation@acceptInvite")
+        @guard(with: ["api"])
+
+    createTeam(input: CreateTeamInput! @spread): Team
+        @field(resolver: "TeamworkMutation@createTeam")
+        @guard(with: ["api"])
+
+    updateTeam(input: UpdateTeamInput! @spread): Team
+        @field(resolver: "TeamworkMutation@updateTeam")
+        @guard(with: ["api"])
+
+    switchTeam(id: ID!): User
+        @field(resolver: "TeamworkMutation@switchTeam")
+        @guard(with: ["api"])
+
+    deleteTeam(id: ID!): Team
+        @field(resolver: "TeamworkMutation@deleteTeam")
+        @guard(with: ["api"])
+
+    invite(
+        team_id: ID!
+        email: String! @rules(apply:["email"])
+    ): String
+        @field(resolver: "TeamworkMutation@invite")
+        @guard(with: ["api"])
+
+    resendInvite(invite_id: ID!): String
+        @field(resolver: "TeamworkMutation@resendInvite")
+        @guard(with: ["api"])
 }

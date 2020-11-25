@@ -6,11 +6,12 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreatePermissionTables extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 * @throws \Exception
+	 */
     public function up()
     {
         $tableNames = config('permission.table_names');
@@ -88,11 +89,12 @@ class CreatePermissionTables extends Migration
             ->forget(config('permission.cache.key'));
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 * @throws \Exception
+	 */
     public function down()
     {
         $tableNames = config('permission.table_names');

@@ -1,0 +1,12 @@
+type Role @modelClass(class: "Spatie\\Permission\\Models\\Role") {
+    id: ID
+    name: String
+    guard_name: String
+
+    users: [User] @morphMany
+    permissions: [Permission] @belongsToMany
+}
+
+extend type Query {
+    roles: [Role] @all
+}

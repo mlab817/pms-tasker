@@ -4,6 +4,7 @@ namespace App\Models;
 
 //use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Joselfonseca\LighthouseGraphQLPassport\HasLoggedInTokens;
@@ -11,20 +12,22 @@ use Joselfonseca\LighthouseGraphQLPassport\HasSocialLogin;
 //use Joselfonseca\LighthouseGraphQLPassport\MustVerifyEmailGraphQL;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
-use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
+use Mpociot\Teamwork\Traits\UserHasTeams;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
-    use HasTeams;
+    use UserHasTeams;
     use Notifiable;
     use TwoFactorAuthenticatable;
 //    use MustVerifyEmailGraphQL;
     use HasLoggedInTokens;
     use HasSocialLogin;
+    use HasRoles;
 
     /**
      * The attributes that are mass assignable.

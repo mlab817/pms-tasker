@@ -2,15 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ddf3edd-e8fa-48ab-9bd7-2745020676be" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graphql/models/Permission.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graphql/models/Role.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/pms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pms.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.rnd" beforeDir="false" afterPath="$PROJECT_DIR$/.rnd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Task.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Team.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Team.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/cors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/lighthouse.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/lighthouse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_13_121547_create_tasks_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_13_121547_create_tasks_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_24_135815_create_sessions_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_24_140440_create_permission_tables.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_24_140440_create_permission_tables.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/StatusesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/StatusesTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/TasksTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/TasksTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/models/Team.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/models/Team.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/schema.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +35,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -171,6 +188,11 @@
       <path value="$PROJECT_DIR$/vendor/nuwave/lighthouse" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
       <path value="$PROJECT_DIR$/vendor/laravel-notification-channels/discord" />
+      <path value="$PROJECT_DIR$/vendor/socialiteproviders/manager" />
+      <path value="$PROJECT_DIR$/vendor/socialiteproviders/discord" />
+      <path value="$PROJECT_DIR$/vendor/laravel/scout" />
+      <path value="$PROJECT_DIR$/vendor/teamtnt/tntsearch" />
+      <path value="$PROJECT_DIR$/vendor/teamtnt/laravel-scout-tntsearch-driver" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kjtzNPbbfFWEcOS1uCT2oZWFqW" />
@@ -210,6 +232,9 @@
       <option name="presentableId" value="Default" />
       <updated>1606226089097</updated>
       <workItem from="1606226090330" duration="1007000" />
+      <workItem from="1606267564082" duration="5912000" />
+      <workItem from="1606288333438" duration="581000" />
+      <workItem from="1606298822762" duration="7220000" />
     </task>
     <servers />
   </component>
@@ -221,7 +246,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

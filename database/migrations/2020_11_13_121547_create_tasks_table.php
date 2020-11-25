@@ -18,10 +18,7 @@ class CreateTasksTable extends Migration
             $table->foreignId('action_id')->nullable();
             $table->string('other_actions')->nullable();
             $table->foreignId('user_id')->nullable();
-//            $table->boolean('completed')->default(false);
-//            $table->foreignId('document_id')->nullable();
-//            $table->foreignId('enduser_id')->nullable();
-            // formerly particulars
+			$table->foreignId('team_id')->nullable()->constrained()->onDelete('set null');
             $table->text('details')->nullable();
             $table->string('remarks')->nullable();
             $table->foreignId('status_id')->default(1); // default to ongoing

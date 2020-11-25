@@ -8,15 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Laravel\Scout\Searchable;
+use Mpociot\Teamwork\Traits\UsedByTeams;
 
 class Task extends Model
 {
     use HasFactory;
     use SoftDeletes;
     use HasModifier;
+    use Searchable;
+    use UsedByTeams;
 
     protected $fillable = [
 		'action_id', // action required
+	    'other_actions',
 		'user_id', // staff assigned
 		'completed', //if completed or not
 		'details', // details of the assignment
@@ -72,5 +77,12 @@ class Task extends Model
 	    }
 
     	return $query->where('staff_id', $user);
+    }
+
+    public function toSearchableArray()
+    {
+		$array = $this->toArray();
+
+		return $array;
     }
 }

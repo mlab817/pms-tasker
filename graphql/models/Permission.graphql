@@ -1,0 +1,10 @@
+type Permission @modelClass(class: "Spatie\\Permission\\Models\\Permission") {
+    id: String
+    name: String
+    guard_name: String
+    roles: [Role] @belongsToMany
+}
+
+type Query {
+    permissions: [Permission] @all
+}

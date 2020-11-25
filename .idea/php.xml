@@ -144,6 +144,11 @@
       <path value="$PROJECT_DIR$/vendor/nuwave/lighthouse" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
       <path value="$PROJECT_DIR$/vendor/laravel-notification-channels/discord" />
+      <path value="$PROJECT_DIR$/vendor/socialiteproviders/manager" />
+      <path value="$PROJECT_DIR$/vendor/socialiteproviders/discord" />
+      <path value="$PROJECT_DIR$/vendor/laravel/scout" />
+      <path value="$PROJECT_DIR$/vendor/teamtnt/tntsearch" />
+      <path value="$PROJECT_DIR$/vendor/teamtnt/laravel-scout-tntsearch-driver" />
     </include_path>
   </component>
   <component name="PhpUnit">
